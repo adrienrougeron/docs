@@ -352,3 +352,5 @@ webhosting
 webpage
 whitelabeling
 yaml
+SemVer
+JS-SDK
