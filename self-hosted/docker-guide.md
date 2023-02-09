@@ -151,6 +151,27 @@ docker-compose up -d
 The images will be pulled and the containers recreated. Migrations will happen automatically so once the containers have
 started you will be on the latest version (or the version you specified).
 
+### Adding packages to use in Flows scripts
+
+If you need third-party packages in a script of one of your flows, you can add these lines in the `directus` service of your `docker-compose.yml` file :
+```yaml
+    command: >
+      sh -c "
+        npm install node-ssh axios
+        npx directus bootstrap && npx directus start
+      "
+```
+
+:::tip Don't forget to provide `FLOWS_EXEC_ALLOWED_MODULES` variable
+In your `docker-compose.yml` file, you will need to add :
+```diff
+    environment:
++     FLOWS_EXEC_ALLOWED_MODULES=array:node-ssh,axios
+```
+For more information, please see the config section on [Flows](https://docs.directus.io/self-hosted/config-options.html#flows)
+:::
+
+
 ## Supported Databases
 
 The Directus Docker Image contains all optional dependencies supported in the API. This means the Docker image can be
