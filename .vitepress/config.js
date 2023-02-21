@@ -1,4 +1,6 @@
-export default {
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
 	base: '/',
 	lang: 'en-US',
 	title: 'Directus Docs',
@@ -143,7 +145,7 @@ gtag('config', 'UA-24637628-7');
 			text: 'Edit this page on GitHub',
 		},
 	},
-};
+});
 
 // function sidebarCookbooks() {
 // 	return [

@@ -11,9 +11,3 @@
 	targetPort = 3000
 	autoLaunch = false
 	framework = "#custom"
-
-[[redirects]]
-   from = "/"
-   to = "/getting-started/introduction"
-   status = 301
-   force = true
