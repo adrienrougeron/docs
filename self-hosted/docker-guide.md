@@ -157,7 +157,7 @@ If you need third-party packages in a script of one of your flows, you can add t
 ```yaml
     command: >
       sh -c "
-        npm install node-ssh axios
+        npm install moment uuid
         npx directus bootstrap && npx directus start
       "
 ```
@@ -166,7 +166,7 @@ If you need third-party packages in a script of one of your flows, you can add t
 In your `docker-compose.yml` file, you will need to add :
 ```diff
     environment:
-+     FLOWS_EXEC_ALLOWED_MODULES=array:node-ssh,axios
++     FLOWS_EXEC_ALLOWED_MODULES=array:moment,uuid
 ```
 For more information, please see the config section on [Flows](https://docs.directus.io/self-hosted/config-options.html#flows)
 :::
